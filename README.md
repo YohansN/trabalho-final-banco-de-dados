@@ -1,4 +1,5 @@
-# frota-db-2022-2-banco-de-dados
+# Trabalho Final - Conta de Luz
+## Cadeira de Banco de Dados | IFCE Maracanaú - 2023.1
 
 documentação do PSQL - POSTGRESQL
 https://www.postgresql.org/docs/7/app-psql.html
