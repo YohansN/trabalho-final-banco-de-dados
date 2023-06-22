@@ -9,7 +9,7 @@ public class Tarifa extends GenericModel{
     public Tarifa(Integer id, String taxa, Integer classe, String lei, String dataInicio, String dataFinal) {
         super.setId(id);
         this.taxa = taxa;
-        this.classe = classe;
+        this.classeId = classe;
         this.lei = lei;
         this.dataInicio = dataInicio;
         this.dataFinal = dataFinal;
