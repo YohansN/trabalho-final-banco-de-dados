@@ -38,7 +38,7 @@ public class Tarifa extends GenericModel{
     @java.lang.Override
     public java.lang.String toString() {
         return "Tarifa{" +
-                "id='" + super.getId() + '\'' +
+                "id='" + this.getId() + '\'' +
                 "taxa='" + taxa + '\'' +
                 ", classe=" + classe +
                 ", lei='" + lei + '\'' +

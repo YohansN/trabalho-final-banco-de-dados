@@ -20,7 +20,7 @@ public class Classe extends GenericModel {
     @java.lang.Override
     public java.lang.String toString() {
         return "Classe{" +
-                "id='" + super.getId() + '\'' +
+                "id='" + this.getId() + '\'' +
                 "descricao='" + descricao + '\'' +
                 ", idTipoFase=" + idTipoFase +
                 '}';

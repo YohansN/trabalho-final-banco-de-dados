@@ -15,7 +15,7 @@ public class TipoPessoa extends GenericModel {
     @java.lang.Override
     public java.lang.String toString() {
         return "TipoPessoa{" +
-                "id='" + super.getId() + '\'' +
+                "id='" + this.getId() + '\'' +
                 "descricao='" + descricao + '\'' +
                 '}';
     }
