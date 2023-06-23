@@ -1,10 +1,16 @@
 package br.com.frota.model;
+
+import br.com.frota.DAO.PosteDAO;
+import br.com.frota.DAO.RotaDAO;
+
 public class Medidor extends GenericModel{
     private String descricao;
-    private Rota rotaId;
-    private Poste posteId;
+    private Integer rotaId;
+    private Integer posteId;
+    static private RotaDAO rotaDao = new RotaDAO();
+    static private PosteDAO posteDao = new PosteDAO();
 
-    public Medidor(Integer id, String descricao, Rota rotaId, Poste posteId) {
+    public Medidor(Integer id, String descricao, Integer rotaId, Integer posteId) {
         super.setId(id);
         this.descricao = descricao;
         this.rotaId = rotaId;
@@ -16,11 +22,11 @@ public class Medidor extends GenericModel{
     }
 
     public Integer getRotaId() {
-        return rotaId.getId();
+        return rotaId;
     }
 
     public Integer getPosteId() {
-        return posteId.getId();
+        return posteId;
     }
 
     @Override
@@ -28,8 +34,8 @@ public class Medidor extends GenericModel{
         return "Medidor{" +
                 "id='" + this.getId() + '\'' +
                 "descricao='" + descricao + '\'' +
-                ", rotaId=" + rotaId +
-                ", posteId=" + posteId +
+                ", rotaId=" + rotaDao.selectRotaById(rotaId) +
+                ", posteId=" + posteDao.selectPosteById(posteId) +
                 '}';
     }
 }

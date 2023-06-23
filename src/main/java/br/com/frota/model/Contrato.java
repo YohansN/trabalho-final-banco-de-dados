@@ -1,14 +1,23 @@
 package br.com.frota.model;
 
+import br.com.frota.DAO.ClasseDAO;
+import br.com.frota.DAO.ClienteDAO;
+import br.com.frota.DAO.MedidorDAO;
+
+import java.sql.Timestamp;
+
 public class Contrato extends GenericModel{
     private String descricao;
-    private String dataInicio;
-    private String dataCriacao;
-    private Medidor medidorId;
-    private Classe classeId;
-    private Cliente clienteId;
+    private Timestamp dataInicio;
+    private Timestamp dataCriacao;
+    private Integer medidorId;
+    private Integer classeId;
+    private Integer clienteId;
+    static private MedidorDAO medidorDao = new MedidorDAO();
+    static private ClasseDAO classeDao = new ClasseDAO();
+    static private ClienteDAO clienteDao = new ClienteDAO();
 
-    public Contrato(Integer id, String descricao, String dataInicio, String dataCriacao, Medidor medidorId, Classe classeId, Cliente clienteId) {
+    public Contrato(Integer id, String descricao, Timestamp dataInicio, Timestamp dataCriacao, Integer medidorId, Integer classeId, Integer clienteId) {
         super.setId(id);
         this.descricao = descricao;
         this.dataInicio = dataInicio;
@@ -22,24 +31,24 @@ public class Contrato extends GenericModel{
         return descricao;
     }
 
-    public String getDataInicio() {
+    public Timestamp getDataInicio() {
         return dataInicio;
     }
 
-    public String getDataCriacao() {
+    public Timestamp getDataCriacao() {
         return dataCriacao;
     }
 
     public Integer getMedidorId() {
-        return medidorId.getId();
+        return medidorId;
     }
 
     public Integer getClasseId() {
-        return classeId.getId();
+        return classeId;
     }
 
     public Integer getClienteId() {
-        return clienteId.getId();
+        return clienteId;
     }
 
     @Override
@@ -49,9 +58,9 @@ public class Contrato extends GenericModel{
                 "descricao='" + descricao + '\'' +
                 ", dataInicio='" + dataInicio + '\'' +
                 ", dataCriacao='" + dataCriacao + '\'' +
-                ", medidorId=" + medidorId +
-                ", classeId=" + classeId +
-                ", clienteId=" + clienteId +
+                ", medidorId=" + medidorDao.selectMedidorById(medidorId) +
+                ", classeId=" + classeDao.selectClasseById(classeId) +
+                ", clienteId=" + clienteDao.selectClienteById(clienteId) +
                 '}';
     }
 }
