@@ -15,8 +15,8 @@ CREATE TABLE tarifa(
     taxa VARCHAR(45),
     classe INT REFERENCES classe(id),
     lei VARCHAR(45) not null,
-    data_inicio VARCHAR(45) not null,
-    data_final VARCHAR(45) not null
+    data_inicio TIMESTAMP not null,
+    data_final TIMESTAMP not null
 );
 
 CREATE TABLE tipo_pessoa(
@@ -107,5 +107,5 @@ CREATE TABLE contrato (
     data_inicio timestamp,
     data_criacao timestamp,
     medidor_id int references medidor(id),
-    class_id int references classe(id),
+    classe_id int references classe(id),
     cliente_id int references cliente(id)
