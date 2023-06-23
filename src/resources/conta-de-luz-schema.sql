@@ -73,7 +73,7 @@ CREATE TABLE tarefa_rota(
     observacao VARCHAR(45),
     data_inicio TIMESTAMP,
     data_fim TIMESTAMP,
-    tarefa_rotcao VARCHAR (45),
+    tarefa_rotacao VARCHAR (45),
     rota_id INT REFERENCES rota(id)
 );
 

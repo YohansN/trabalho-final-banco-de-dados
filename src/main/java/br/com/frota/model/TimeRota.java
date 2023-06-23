@@ -1,29 +1,34 @@
 package br.com.frota.model;
 
-public class TimeRota extends GenericModel{
-    private Funcionario funcionarioId;
-    private TarefaRota tarefaRotaId;
+import br.com.frota.DAO.FuncionarioDAO;
+import br.com.frota.DAO.TarefaRotaDAO;
 
-    public TimeRota(Integer id, Funcionario funcionarioId, TarefaRota tarefaRotaId) {
+public class TimeRota extends GenericModel{
+    private Integer funcionarioId;
+    private Integer tarefaRotaId;
+    static private FuncionarioDAO funcionarioDao = new FuncionarioDAO();
+    static private TarefaRotaDAO tarefaRotaDao = new TarefaRotaDAO();
+
+    public TimeRota(Integer id, Integer funcionarioId, Integer tarefaRotaId) {
         super.setId(id);
         this.funcionarioId = funcionarioId;
         this.tarefaRotaId = tarefaRotaId;
     }
 
     public Integer getFuncionarioId() {
-        return funcionarioId.getId();
+        return funcionarioId;
     }
 
     public Integer getTarefaRotaId() {
-        return tarefaRotaId.getId();
+        return tarefaRotaId;
     }
 
     @Override
     public String toString() {
         return "TimeRota{" +
                 "id='" + this.getId() + '\'' +
-                "funcionarioId=" + funcionarioId +
-                ", tarefaRotaId=" + tarefaRotaId +
+                "funcionarioId=" + funcionarioDao.selectFuncionarioById(funcionarioId) +
+                ", tarefaRotaId=" + tarefaRotaDao.selectTarefaRotaById(tarefaRotaId) +
                 '}';
     }
 }

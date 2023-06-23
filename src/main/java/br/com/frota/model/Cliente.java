@@ -1,11 +1,14 @@
 package br.com.frota.model;
 
+import br.com.frota.DAO.PessoaDAO;
+
 public class Cliente extends GenericModel{
     private String numDocumento;
     private String numCliente;
-    private Pessoa pessoaId;
+    private Integer pessoaId;
+    static private PessoaDAO pessoaDao = new PessoaDAO();
 
-    public Cliente(Integer id, String numDocumento, String numCliente, Pessoa pessoaId) {
+    public Cliente(Integer id, String numDocumento, String numCliente, Integer pessoaId) {
         super.setId(id);
         this.numDocumento = numDocumento;
         this.numCliente = numCliente;
@@ -21,7 +24,7 @@ public class Cliente extends GenericModel{
     }
 
     public Integer getPessoaId() {
-        return pessoaId.getId();
+        return pessoaId;
     }
 
     @Override
@@ -30,7 +33,7 @@ public class Cliente extends GenericModel{
                 "id='" + this.getId() + '\'' +
                 "numDocumento='" + numDocumento + '\'' +
                 ", numCliente='" + numCliente + '\'' +
-                ", pessoaId=" + pessoaId +
+                ", pessoaId=" + pessoaDao.selectPessoaById(pessoaId) +
                 '}';
     }
 }

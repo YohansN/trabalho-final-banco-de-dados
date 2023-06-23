@@ -1,13 +1,18 @@
 package br.com.frota.model;
 
+import br.com.frota.DAO.RotaDAO;
+
+import java.sql.Timestamp;
+
 public class TarefaRota extends GenericModel{
     private String observacao;
-    private String dataInicio;
-    private String dataFim;
+    private Timestamp dataInicio;
+    private Timestamp dataFim;
     private String tarefaRotacao;
-    private Rota rotaId;
+    private Integer rotaId;
+    static private RotaDAO rotaDao = new RotaDAO();
 
-    public TarefaRota(Integer id, String observacao, String dataInicio, String dataFim, String tarefaRotacao, Rota rotaId) {
+    public TarefaRota(Integer id, String observacao, Timestamp dataInicio, Timestamp dataFim, String tarefaRotacao, Integer rotaId) {
         super.setId(id);
         this.observacao = observacao;
         this.dataInicio = dataInicio;
@@ -20,11 +25,11 @@ public class TarefaRota extends GenericModel{
         return observacao;
     }
 
-    public String getDataInicio() {
+    public Timestamp getDataInicio() {
         return dataInicio;
     }
 
-    public String getDataFim() {
+    public Timestamp getDataFim() {
         return dataFim;
     }
 
@@ -33,7 +38,7 @@ public class TarefaRota extends GenericModel{
     }
 
     public Integer getRotaId() {
-        return rotaId.getId();
+        return rotaId;
     }
 
     @Override
@@ -44,7 +49,7 @@ public class TarefaRota extends GenericModel{
                 ", dataInicio='" + dataInicio + '\'' +
                 ", dataFim='" + dataFim + '\'' +
                 ", tarefaRotacao='" + tarefaRotacao + '\'' +
-                ", rotaId=" + rotaId +
+                ", rotaId=" + rotaDao.selectRotaById(rotaId) +
                 '}';
     }
 }
