@@ -9,11 +9,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PessoaDAO extends ConexaoDB{
-    private static final String INSERT_PESSOA_SQL = "INSERT INTO pessoa (descricao) VALUES (?, ?, ?, ?);";
-    private static final String SELECT_PESSOA_BY_ID = "SELECT id, descricao FROM pessoa WHERE id = ?";
+    private static final String INSERT_PESSOA_SQL = "INSERT INTO pessoa (nome, cpf, cnpj, tipo_pessoa_id) VALUES (?, ?, ?, ?);";
+    private static final String SELECT_PESSOA_BY_ID = "SELECT id, nome, cpf, cnpj, tipo_pessoa_id FROM pessoa WHERE id = ?";
     private static final String SELECT_ALL_PESSOA = "SELECT * FROM pessoa;";
     private static final String DELETE_PESSOA_SQL = "DELETE FROM pessoa WHERE id = ?;";
-    private static final String UPDATE_PESSOA_SQL = "UPDATE pessoa SET descricao = ? WHERE id = ?;";
+    private static final String UPDATE_PESSOA_SQL = "UPDATE pessoa SET nome = ?, cpf = ?, cnpj = ?, topo_pessoa_id = ? WHERE id = ?;";
     private static final String TOTAL = "SELECT count(1) FROM pessoa;";
 
     public Integer count() {

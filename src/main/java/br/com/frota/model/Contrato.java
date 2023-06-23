@@ -4,11 +4,11 @@ public class Contrato extends GenericModel{
     private String descricao;
     private String dataInicio;
     private String dataCriacao;
-    private Integer medidorId;
-    private Integer classeId;
-    private Integer clienteId;
+    private Medidor medidorId;
+    private Classe classeId;
+    private Cliente clienteId;
 
-    public Contrato(Integer id, String descricao, String dataInicio, String dataCriacao, Integer medidorId, Integer classeId, Integer clienteId) {
+    public Contrato(Integer id, String descricao, String dataInicio, String dataCriacao, Medidor medidorId, Classe classeId, Cliente clienteId) {
         super.setId(id);
         this.descricao = descricao;
         this.dataInicio = dataInicio;
@@ -31,15 +31,15 @@ public class Contrato extends GenericModel{
     }
 
     public Integer getMedidorId() {
-        return medidorId;
+        return medidorId.getId();
     }
 
     public Integer getClasseId() {
-        return classeId;
+        return classeId.getId();
     }
 
     public Integer getClienteId() {
-        return clienteId;
+        return clienteId.getId();
     }
 
     @Override

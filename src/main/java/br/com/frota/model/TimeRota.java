@@ -1,21 +1,21 @@
 package br.com.frota.model;
 
 public class TimeRota extends GenericModel{
-    private Integer funcionarioId;
-    private Integer tarefaRotaId;
+    private Funcionario funcionarioId;
+    private TarefaRota tarefaRotaId;
 
-    public TimeRota(Integer id, Integer funcionarioId, Integer tarefaRotaId) {
+    public TimeRota(Integer id, Funcionario funcionarioId, TarefaRota tarefaRotaId) {
         super.setId(id);
         this.funcionarioId = funcionarioId;
         this.tarefaRotaId = tarefaRotaId;
     }
 
     public Integer getFuncionarioId() {
-        return funcionarioId;
+        return funcionarioId.getId();
     }
 
     public Integer getTarefaRotaId() {
-        return tarefaRotaId;
+        return tarefaRotaId.getId();
     }
 
     @Override

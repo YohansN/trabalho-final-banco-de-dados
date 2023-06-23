@@ -3,10 +3,10 @@ package br.com.frota.model;
 public class Cobranca extends GenericModel{
     private String mesReferencia;
     private String anoReferencia;
-    private Integer tarifaId;
-    private Integer medicaoId;
+    private Tarifa tarifaId;
+    private Medicao medicaoId;
 
-    public Cobranca(Integer id, String mesReferencia, String anoReferencia, Integer tarifaId, Integer medicaoId) {
+    public Cobranca(Integer id, String mesReferencia, String anoReferencia, Tarifa tarifaId, Medicao medicaoId) {
         super.setId(id);
         this.mesReferencia = mesReferencia;
         this.anoReferencia = anoReferencia;
@@ -23,11 +23,11 @@ public class Cobranca extends GenericModel{
     }
 
     public Integer getTarifaId() {
-        return tarifaId;
+        return tarifaId.getId();
     }
 
     public Integer getMedicaoId() {
-        return medicaoId;
+        return medicaoId.getId();
     }
 
     @Override
@@ -37,7 +37,7 @@ public class Cobranca extends GenericModel{
                 "mesReferencia='" + mesReferencia + '\'' +
                 ", anoReferencia='" + anoReferencia + '\'' +
                 ", tarifaId=" + tarifaId +
-                ", medicaoId=" + medicaoId +
+                ", medicaoId=" + medicaoId+
                 '}';
     }
 }

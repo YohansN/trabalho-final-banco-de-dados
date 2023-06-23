@@ -5,9 +5,9 @@ public class TarefaRota extends GenericModel{
     private String dataInicio;
     private String dataFim;
     private String tarefaRotacao;
-    private Integer rotaId;
+    private Rota rotaId;
 
-    public TarefaRota(Integer id, String observacao, String dataInicio, String dataFim, String tarefaRotacao, Integer rotaId) {
+    public TarefaRota(Integer id, String observacao, String dataInicio, String dataFim, String tarefaRotacao, Rota rotaId) {
         super.setId(id);
         this.observacao = observacao;
         this.dataInicio = dataInicio;
@@ -33,7 +33,7 @@ public class TarefaRota extends GenericModel{
     }
 
     public Integer getRotaId() {
-        return rotaId;
+        return rotaId.getId();
     }
 
     @Override

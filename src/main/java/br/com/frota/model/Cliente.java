@@ -3,9 +3,9 @@ package br.com.frota.model;
 public class Cliente extends GenericModel{
     private String numDocumento;
     private String numCliente;
-    private Integer pessoaId;
+    private Pessoa pessoaId;
 
-    public Cliente(Integer id, String numDocumento, String numCliente, Integer pessoaId) {
+    public Cliente(Integer id, String numDocumento, String numCliente, Pessoa pessoaId) {
         super.setId(id);
         this.numDocumento = numDocumento;
         this.numCliente = numCliente;
@@ -21,7 +21,7 @@ public class Cliente extends GenericModel{
     }
 
     public Integer getPessoaId() {
-        return pessoaId;
+        return pessoaId.getId();
     }
 
     @Override

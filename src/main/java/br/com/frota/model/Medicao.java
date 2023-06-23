@@ -5,10 +5,10 @@ public class Medicao extends GenericModel{
     private String ano;
     private String dataMedicao;
     private String consumo;
-    private Integer medidorId;
-    private Integer timeRotaId;
+    private Medidor medidorId;
+    private TimeRota timeRotaId;
 
-    public Medicao(Integer id, String mes, String ano, String dataMedicao, String consumo, Integer medidorId, Integer timeRotaId) {
+    public Medicao(Integer id, String mes, String ano, String dataMedicao, String consumo, Medidor medidorId, TimeRota timeRotaId) {
         super.setId(id);
         this.mes = mes;
         this.ano = ano;
@@ -35,11 +35,11 @@ public class Medicao extends GenericModel{
     }
 
     public Integer getMedidorId() {
-        return medidorId;
+        return medidorId.getId();
     }
 
     public Integer getTimeRotaId() {
-        return timeRotaId;
+        return timeRotaId.getId();
     }
 
     @Override

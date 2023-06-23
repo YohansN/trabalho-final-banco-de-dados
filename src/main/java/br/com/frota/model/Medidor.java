@@ -1,10 +1,10 @@
 package br.com.frota.model;
 public class Medidor extends GenericModel{
     private String descricao;
-    private Integer rotaId;
-    private Integer posteId;
+    private Rota rotaId;
+    private Poste posteId;
 
-    public Medidor(Integer id, String descricao, Integer rotaId, Integer posteId) {
+    public Medidor(Integer id, String descricao, Rota rotaId, Poste posteId) {
         super.setId(id);
         this.descricao = descricao;
         this.rotaId = rotaId;
@@ -16,11 +16,11 @@ public class Medidor extends GenericModel{
     }
 
     public Integer getRotaId() {
-        return rotaId;
+        return rotaId.getId();
     }
 
     public Integer getPosteId() {
-        return posteId;
+        return posteId.getId();
     }
 
     @Override

@@ -1,10 +1,13 @@
 package br.com.frota.model;
 
+import br.com.frota.DAO.TipoPessoaDAO;
+
 public class Pessoa extends GenericModel {
     private String nome;
     private String cpf;
     private String cnpj;
     private Integer tipoPessoaId;
+    static private TipoPessoaDAO tipoPessoa = new TipoPessoaDAO();
 
     public Pessoa(Integer id, String nome, String cpf, String cnpj, Integer tipoPessoaId) {
         super.setId(id);
@@ -46,7 +49,7 @@ public class Pessoa extends GenericModel {
                 "nome='" + nome + '\'' +
                 ", cpf='" + cpf + '\'' +
                 ", cnpj='" + cnpj + '\'' +
-                ", tipoPessoaId=" + tipoPessoaId +
+                ", tipoPessoaId=" + tipoPessoa.selectTipoPessoaById(tipoPessoaId) +
                 '}';
     }
 }

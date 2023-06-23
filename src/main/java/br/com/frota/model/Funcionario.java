@@ -1,10 +1,9 @@
 package br.com.frota.model;
-
+import br.com.frota.DAO.PessoaDAO;
 public class Funcionario extends GenericModel{
     private String codigoFuncional;
     private Integer pessoaId;
-
-
+    static  private PessoaDAO pessoaDao = new PessoaDAO();
     public Funcionario(Integer id, String codigoFuncional, Integer pessoaId) {
         super.setId(id);
         this.codigoFuncional = codigoFuncional;
@@ -24,7 +23,7 @@ public class Funcionario extends GenericModel{
         return "Funcionario{" +
                 "id='" + this.getId() + '\'' +
                 "codigoFuncional='" + codigoFuncional + '\'' +
-                ", pessoaId=" + pessoaId +
+                ", pessoaId=" + pessoaDao.selectPessoaById(pessoaId) +
                 '}';
     }
 }

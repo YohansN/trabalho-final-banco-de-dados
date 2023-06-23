@@ -2,9 +2,9 @@ package br.com.frota.model;
 
 public class Classe extends GenericModel {
     private String descricao;
-    private Integer tipoFaseId;
+    private TipoFase tipoFaseId;
 
-    public Classe(Integer id, String descricao, Integer tipoFaseId) {
+    public Classe(Integer id, String descricao, TipoFase tipoFaseId) {
         super.setId(id);
         this.descricao = descricao;
         this.tipoFaseId = tipoFaseId;
@@ -15,7 +15,7 @@ public class Classe extends GenericModel {
         return descricao;
     }
     public Integer getTipoFaseId() {
-        return tipoFaseId;
+        return tipoFaseId.getId();
     }
     @Override
     public java.lang.String toString() {
