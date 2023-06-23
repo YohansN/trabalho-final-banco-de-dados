@@ -34,6 +34,7 @@ public class Pessoa extends GenericModel {
         return cnpj;
     }
 
+
     public Integer getTipoPessoaId() {
         return tipoPessoaId;
     }
