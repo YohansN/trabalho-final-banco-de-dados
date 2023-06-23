@@ -42,8 +42,8 @@ public class Contrato extends GenericModel{
         return clienteId;
     }
 
-    @java.lang.Override
-    public java.lang.String toString() {
+    @Override
+    public String toString() {
         return "Contrato{" +
                 "id='" + this.getId() + '\'' +
                 "descricao='" + descricao + '\'' +

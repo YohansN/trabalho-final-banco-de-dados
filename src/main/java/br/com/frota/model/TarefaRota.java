@@ -36,8 +36,8 @@ public class TarefaRota extends GenericModel{
         return rotaId;
     }
 
-    @java.lang.Override
-    public java.lang.String toString() {
+    @Override
+    public String toString() {
         return "TarefaRota{" +
                 "id='" + this.getId() + '\'' +
                 "observacao='" + observacao + '\'' +

@@ -29,8 +29,8 @@ public class Poste extends GenericModel{
         return observacao;
     }
 
-    @java.lang.Override
-    public java.lang.String toString() {
+    @Override
+    public String toString() {
         return "Poste{" +
                 "id='" + this.getId() + '\'' +
                 "latitude='" + latitude + '\'' +

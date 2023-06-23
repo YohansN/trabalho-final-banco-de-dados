@@ -1,15 +1,15 @@
 package br.com.frota.model;
 public class Tarifa extends GenericModel{
     private String taxa;
-    private Integer classe;
+    private Integer classeId;
     private String lei;
     private String dataInicio;
     private String dataFinal;
 
-    public Tarifa(Integer id, String taxa, Integer classe, String lei, String dataInicio, String dataFinal) {
+    public Tarifa(Integer id, String taxa, Integer classeId, String lei, String dataInicio, String dataFinal) {
         super.setId(id);
         this.taxa = taxa;
-        this.classeId = classe;
+        this.classeId = classeId;
         this.lei = lei;
         this.dataInicio = dataInicio;
         this.dataFinal = dataFinal;
@@ -20,7 +20,7 @@ public class Tarifa extends GenericModel{
     }
 
     public Integer getClasse() {
-        return classe;
+        return classeId;
     }
 
     public String getLei() {
@@ -35,12 +35,12 @@ public class Tarifa extends GenericModel{
         return dataFinal;
     }
 
-    @java.lang.Override
+    @Override
     public java.lang.String toString() {
         return "Tarifa{" +
                 "id='" + this.getId() + '\'' +
                 "taxa='" + taxa + '\'' +
-                ", classe=" + classe +
+                ", classe=" + classeId +
                 ", lei='" + lei + '\'' +
                 ", dataInicio='" + dataInicio + '\'' +
                 ", dataFinal='" + dataFinal + '\'' +

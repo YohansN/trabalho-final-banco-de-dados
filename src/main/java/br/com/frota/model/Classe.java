@@ -1,22 +1,29 @@
 package br.com.frota.model;
 
-public class TipoPessoa extends GenericModel {
+public class Classe extends GenericModel {
     private String descricao;
+    private Integer idTipoFase;
 
-    public TipoPessoa(Integer id, String descricao) {
+    public Classe(Integer id, String descricao, Integer idTipoFase) {
         super.setId(id);
         this.descricao = descricao;
+        this.idTipoFase = idTipoFase;
     }
+
 
     public String getDescricao() {
         return descricao;
     }
-
-    @java.lang.Override
+    public Integer getIdTipoFase() {
+        return idTipoFase;
+    }
+    @Override
     public java.lang.String toString() {
-        return "TipoPessoa{" +
+        return "Classe{" +
                 "id='" + this.getId() + '\'' +
                 "descricao='" + descricao + '\'' +
+                ", idTipoFase=" + idTipoFase +
                 '}';
     }
 }
+

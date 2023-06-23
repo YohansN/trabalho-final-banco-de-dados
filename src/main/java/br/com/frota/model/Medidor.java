@@ -23,8 +23,8 @@ public class Medidor extends GenericModel{
         return posteId;
     }
 
-    @java.lang.Override
-    public java.lang.String toString() {
+    @Override
+    public String toString() {
         return "Medidor{" +
                 "id='" + this.getId() + '\'' +
                 "descricao='" + descricao + '\'' +

@@ -42,8 +42,8 @@ public class Medicao extends GenericModel{
         return timeRotaId;
     }
 
-    @java.lang.Override
-    public java.lang.String toString() {
+    @Override
+    public String toString() {
         return "Medicao{" +
                 "id='" + this.getId() + '\'' +
                 "mes='" + mes + '\'' +

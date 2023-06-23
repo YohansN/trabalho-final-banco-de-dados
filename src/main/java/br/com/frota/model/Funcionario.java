@@ -19,8 +19,8 @@ public class Funcionario extends GenericModel{
         return pessoaId;
     }
 
-    @java.lang.Override
-    public java.lang.String toString() {
+    @Override
+    public String toString() {
         return "Funcionario{" +
                 "id='" + this.getId() + '\'' +
                 "codigoFuncional='" + codigoFuncional + '\'' +

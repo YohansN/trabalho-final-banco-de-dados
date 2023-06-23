@@ -24,8 +24,8 @@ public class Cliente extends GenericModel{
         return pessoaId;
     }
 
-    @java.lang.Override
-    public java.lang.String toString() {
+    @Override
+    public String toString() {
         return "Cliente{" +
                 "id='" + this.getId() + '\'' +
                 "numDocumento='" + numDocumento + '\'' +

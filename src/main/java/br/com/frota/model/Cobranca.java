@@ -30,8 +30,8 @@ public class Cobranca extends GenericModel{
         return medicaoId;
     }
 
-    @java.lang.Override
-    public java.lang.String toString() {
+    @Override
+    public String toString() {
         return "Cobranca{" +
                 "id='" + this.getId() + '\'' +
                 "mesReferencia='" + mesReferencia + '\'' +

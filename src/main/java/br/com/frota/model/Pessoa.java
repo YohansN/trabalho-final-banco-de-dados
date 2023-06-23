@@ -38,8 +38,8 @@ public class Pessoa extends GenericModel {
         return tipoPessoaId;
     }
 
-    @java.lang.Override
-    public java.lang.String toString() {
+    @Override
+    public String toString() {
         return "Pessoa{" +
                 "id='" + this.getId() + '\'' +
                 "nome='" + nome + '\'' +

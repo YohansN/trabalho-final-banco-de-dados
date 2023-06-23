@@ -18,8 +18,8 @@ public class TimeRota extends GenericModel{
         return tarefaRotaId;
     }
 
-    @java.lang.Override
-    public java.lang.String toString() {
+    @Override
+    public String toString() {
         return "TimeRota{" +
                 "id='" + this.getId() + '\'' +
                 "funcionarioId=" + funcionarioId +

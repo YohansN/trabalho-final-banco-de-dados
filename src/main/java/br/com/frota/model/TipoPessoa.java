@@ -1,20 +1,20 @@
 package br.com.frota.model;
 
-public class Rota extends GenericModel{
+public class TipoPessoa extends GenericModel {
     private String descricao;
 
-    public Rota(Integer id, string descricao) {
+    public TipoPessoa(Integer id, String descricao) {
         super.setId(id);
         this.descricao = descricao;
     }
 
-    public string getDescricao() {
+    public String getDescricao() {
         return descricao;
     }
 
-    @java.lang.Override
-    public java.lang.String toString() {
-        return "Rota{" +
+    @Override
+    public String toString() {
+        return "TipoPessoa{" +
                 "id='" + this.getId() + '\'' +
                 "descricao='" + descricao + '\'' +
                 '}';
