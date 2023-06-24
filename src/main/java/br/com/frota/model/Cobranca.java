@@ -1,12 +1,17 @@
 package br.com.frota.model;
 
+import br.com.frota.DAO.MedicaoDAO;
+import br.com.frota.DAO.TarifaDAO;
+
 public class Cobranca extends GenericModel{
     private String mesReferencia;
     private String anoReferencia;
-    private Tarifa tarifaId;
-    private Medicao medicaoId;
+    private Integer tarifaId;
+    private Integer medicaoId;
+    static private TarifaDAO tarifaDao = new TarifaDAO();
+    static private MedicaoDAO medicaoDao = new MedicaoDAO();
 
-    public Cobranca(Integer id, String mesReferencia, String anoReferencia, Tarifa tarifaId, Medicao medicaoId) {
+    public Cobranca(Integer id, String mesReferencia, String anoReferencia, Integer tarifaId, Integer medicaoId) {
         super.setId(id);
         this.mesReferencia = mesReferencia;
         this.anoReferencia = anoReferencia;
@@ -23,11 +28,11 @@ public class Cobranca extends GenericModel{
     }
 
     public Integer getTarifaId() {
-        return tarifaId.getId();
+        return tarifaId;
     }
 
     public Integer getMedicaoId() {
-        return medicaoId.getId();
+        return medicaoId;
     }
 
     @Override
@@ -36,8 +41,8 @@ public class Cobranca extends GenericModel{
                 "id='" + this.getId() + '\'' +
                 "mesReferencia='" + mesReferencia + '\'' +
                 ", anoReferencia='" + anoReferencia + '\'' +
-                ", tarifaId=" + tarifaId +
-                ", medicaoId=" + medicaoId+
+                ", tarifaId=" + tarifaDao.selectTarifaById(tarifaId) +
+                ", medicaoId=" + medicaoDao.selectMedicaoById(medicaoId) +
                 '}';
     }
 }

@@ -1,14 +1,21 @@
 package br.com.frota.model;
 
+import br.com.frota.DAO.MedidorDAO;
+import br.com.frota.DAO.TimeRotaDAO;
+
+import java.sql.Timestamp;
+
 public class Medicao extends GenericModel{
     private String mes;
     private String ano;
-    private String dataMedicao;
+    private Timestamp dataMedicao;
     private String consumo;
-    private Medidor medidorId;
-    private TimeRota timeRotaId;
+    private Integer medidorId;
+    private Integer timeRotaId;
+    static private MedidorDAO medidorDao = new MedidorDAO();
+    static private TimeRotaDAO timeRotaDao = new TimeRotaDAO();
 
-    public Medicao(Integer id, String mes, String ano, String dataMedicao, String consumo, Medidor medidorId, TimeRota timeRotaId) {
+    public Medicao(Integer id, String mes, String ano, Timestamp dataMedicao, String consumo, Integer medidorId, Integer timeRotaId) {
         super.setId(id);
         this.mes = mes;
         this.ano = ano;
@@ -26,7 +33,7 @@ public class Medicao extends GenericModel{
         return ano;
     }
 
-    public String getDataMedicao() {
+    public Timestamp getDataMedicao() {
         return dataMedicao;
     }
 
@@ -35,11 +42,11 @@ public class Medicao extends GenericModel{
     }
 
     public Integer getMedidorId() {
-        return medidorId.getId();
+        return medidorId;
     }
 
     public Integer getTimeRotaId() {
-        return timeRotaId.getId();
+        return timeRotaId;
     }
 
     @Override
@@ -50,8 +57,8 @@ public class Medicao extends GenericModel{
                 ", ano='" + ano + '\'' +
                 ", dataMedicao='" + dataMedicao + '\'' +
                 ", consumo='" + consumo + '\'' +
-                ", medidorId=" + medidorId +
-                ", timeRotaId=" + timeRotaId +
+                ", medidorId=" + medidorDao.selectMedidorById(medidorId) +
+                ", timeRotaId=" + timeRotaDao.selectTimeRotaById(timeRotaId) +
                 '}';
     }
 }

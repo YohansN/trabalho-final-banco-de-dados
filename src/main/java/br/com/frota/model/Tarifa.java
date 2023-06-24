@@ -1,12 +1,18 @@
 package br.com.frota.model;
+
+import br.com.frota.DAO.ClasseDAO;
+
+import java.sql.Timestamp;
+
 public class Tarifa extends GenericModel{
     private String taxa;
-    private Classe classeId;
+    private Integer classeId;
     private String lei;
-    private String dataInicio;
-    private String dataFinal;
+    private Timestamp dataInicio;
+    private Timestamp dataFinal;
+    static private ClasseDAO classeDao = new ClasseDAO();
 
-    public Tarifa(Integer id, String taxa, Classe classeId, String lei, String dataInicio, String dataFinal) {
+    public Tarifa(Integer id, String taxa, Integer classeId, String lei, Timestamp dataInicio, Timestamp dataFinal) {
         super.setId(id);
         this.taxa = taxa;
         this.classeId = classeId;
@@ -20,18 +26,18 @@ public class Tarifa extends GenericModel{
     }
 
     public Integer getClasse() {
-        return classeId.getId();
+        return classeId;
     }
 
     public String getLei() {
         return lei;
     }
 
-    public String getDataInicio() {
+    public Timestamp getDataInicio() {
         return dataInicio;
     }
 
-    public String getDataFinal() {
+    public Timestamp getDataFinal() {
         return dataFinal;
     }
 
@@ -40,7 +46,7 @@ public class Tarifa extends GenericModel{
         return "Tarifa{" +
                 "id='" + this.getId() + '\'' +
                 "taxa='" + taxa + '\'' +
-                ", classe=" + classeId +
+                ", classe=" + classeDao.selectClasseById(classeId) +
                 ", lei='" + lei + '\'' +
                 ", dataInicio='" + dataInicio + '\'' +
                 ", dataFinal='" + dataFinal + '\'' +
