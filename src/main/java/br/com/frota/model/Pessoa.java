@@ -78,7 +78,7 @@ public class Pessoa extends GenericModel {
                 "nome='" + nome + '\'' +
                 ", cpf='" + cpf + '\'' +
                 ", cnpj='" + cnpj + '\'' +
-                ", tipoPessoaId=" + tipoPessoa.selectTipoPessoaById(tipoPessoaId) +
+                ", tipoPessoaId=" + tipoPessoaId +
                 '}';
     }
 }

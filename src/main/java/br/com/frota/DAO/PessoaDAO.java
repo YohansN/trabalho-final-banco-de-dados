@@ -36,14 +36,17 @@ public class PessoaDAO extends ConexaoDB{
         try (PreparedStatement preparedStatement = prepararSQL(INSERT_PESSOA_SQL)) {
             preparedStatement.setString(1, entidade.getNome());
             preparedStatement.setString(2, entidade.getCpf());
-            preparedStatement.setInt(3, entidade.getTipoPessoaId());
 
-            if (entidade.getCnpj().isEmpty() || entidade.getCnpj() == null){
-                preparedStatement.setString(4, null);
+            if (entidade.getCnpj() == null || entidade.getCnpj().isEmpty() ){
+                preparedStatement.setString(3, null);
+                preparedStatement.setInt(4, entidade.getTipoPessoaId());
                 preparedStatement.executeUpdate();
             }
-            preparedStatement.setString(4, entidade.getCnpj());
+
+            preparedStatement.setString(3, entidade.getCnpj());
+            preparedStatement.setInt(4, entidade.getTipoPessoaId());
             preparedStatement.executeUpdate();
+            System.out.println("InsertPessoa feito com sucesso!");
 
         } catch (SQLException e) {
             printSQLException(e);
