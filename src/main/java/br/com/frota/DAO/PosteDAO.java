@@ -13,7 +13,7 @@ public class PosteDAO extends ConexaoDB{
     private static final String SELECT_POSTE_BY_ID = "SELECT id, latitude, longitude, codigo, obervacao FROM poste WHERE id = ?";
     private static final String SELECT_ALL_POSTE = "SELECT * FROM poste;";
     private static final String DELETE_POSTE_SQL = "DELETE FROM poste WHERE id = ?;";
-    private static final String UPDATE_POSTE_SQL = "UPDATE poste SET id = ? latitude = ?, longitude = ?, codigo = ?, obervacao = ? WHERE id = ?;";
+    private static final String UPDATE_POSTE_SQL = "UPDATE poste SET latitude = ?, longitude = ?, codigo = ?, obervacao = ? WHERE id = ?;";
     private static final String TOTAL = "SELECT count(1) FROM poste;";
 
     public Integer count() {
@@ -100,11 +100,11 @@ public class PosteDAO extends ConexaoDB{
 
     public boolean updatePoste(Poste entidade) throws SQLException {
         try (PreparedStatement statement = prepararSQL(UPDATE_POSTE_SQL)) {
-            statement.setInt(1, entidade.getId());
-            statement.setString(2, entidade.getLatitude());
-            statement.setString(3, entidade.getLongitude());
-            statement.setString(4, entidade.getCodigo());
-            statement.setString(5, entidade.getObservacao());
+            statement.setString(1, entidade.getLatitude());
+            statement.setString(2, entidade.getLongitude());
+            statement.setString(3, entidade.getCodigo());
+            statement.setString(4, entidade.getObservacao());
+            statement.setInt(5, entidade.getId());
 
             return statement.executeUpdate() > 0;
         } catch (ClassNotFoundException e) {

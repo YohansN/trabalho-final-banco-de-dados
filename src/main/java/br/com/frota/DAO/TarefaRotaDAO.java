@@ -14,7 +14,7 @@ public class TarefaRotaDAO extends ConexaoDB{
     private static final String SELECT_TAREFA_ROTA_BY_ID = "SELECT id, observacao, data_inicio, data_fim, tarefa_rotcao, rota_id FROM tarefa_rota WHERE id = ?";
     private static final String SELECT_ALL_TAREFA_ROTA = "SELECT * FROM tarefa_rota;";
     private static final String DELETE_TAREFA_ROTA_SQL = "DELETE FROM tarefa_rota WHERE id = ?;";
-    private static final String UPDATE_TAREFA_ROTA_SQL = "UPDATE tarefa_rota SET id = ? observacao = ?, data_inicio = ?, data_fim = ?, tarefa_rotcao = ?, rota_id = ? WHERE id = ?;";
+    private static final String UPDATE_TAREFA_ROTA_SQL = "UPDATE tarefa_rota SET observacao = ?, data_inicio = ?, data_fim = ?, tarefa_rotcao = ?, rota_id = ? WHERE id = ?;";
     private static final String TOTAL = "SELECT count(1) FROM tarefa_rota;";
 
     public Integer count() {
@@ -104,12 +104,12 @@ public class TarefaRotaDAO extends ConexaoDB{
 
     public boolean updateTarefaRota(TarefaRota entidade) throws SQLException {
         try (PreparedStatement statement = prepararSQL(UPDATE_TAREFA_ROTA_SQL)) {
-            statement.setInt(1, entidade.getId());
-            statement.setString(2, entidade.getObservacao());
-            statement.setTimestamp(3, entidade.getDataInicio());
-            statement.setTimestamp(4, entidade.getDataFim());
-            statement.setString(5, entidade.getTarefaRotacao());
+            statement.setString(1, entidade.getObservacao());
+            statement.setTimestamp(2, entidade.getDataInicio());
+            statement.setTimestamp(3, entidade.getDataFim());
+            statement.setString(4, entidade.getTarefaRotacao());
             statement.setInt(5, entidade.getRotaId());
+            statement.setInt(6, entidade.getId());
 
             return statement.executeUpdate() > 0;
         } catch (ClassNotFoundException e) {

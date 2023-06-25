@@ -90,8 +90,8 @@ public class TipoPessoaDAO extends ConexaoDB{
 
     public boolean updateTipoPessoa(TipoPessoa entidade) throws SQLException {
         try (PreparedStatement statement = prepararSQL(UPDATE_TIPO_PESSOA_SQL)) {
-            statement.setInt(1, entidade.getId());
-            statement.setString(2, entidade.getDescricao());
+            statement.setString(1, entidade.getDescricao());
+            statement.setInt(2, entidade.getId());
 
             return statement.executeUpdate() > 0;
         } catch (ClassNotFoundException e) {

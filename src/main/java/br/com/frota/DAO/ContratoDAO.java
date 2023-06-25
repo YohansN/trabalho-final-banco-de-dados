@@ -14,7 +14,7 @@ public class ContratoDAO extends ConexaoDB{
     private static final String SELECT_CONTRATO_BY_ID = "SELECT id, descricao, data_inicio, data_criacao, medidor_id, classe_id, cliente_id FROM contrato WHERE id = ?";
     private static final String SELECT_ALL_CONTRATO = "SELECT * FROM contrato;";
     private static final String DELETE_CONTRATO_SQL = "DELETE FROM contrato WHERE id = ?;";
-    private static final String UPDATE_CONTRATO_SQL = "UPDATE contrato SET id = ? descricao = ?, data_inicio = ?, data_criacao = ?, medidor_id = ?, classe_id = ?, cliente_id = ? WHERE id = ?;";
+    private static final String UPDATE_CONTRATO_SQL = "UPDATE contrato SET descricao = ?, data_inicio = ?, data_criacao = ?, medidor_id = ?, classe_id = ?, cliente_id = ? WHERE id = ?;";
     private static final String TOTAL = "SELECT count(1) FROM contrato;";
 
     public Integer count() {
@@ -107,13 +107,13 @@ public class ContratoDAO extends ConexaoDB{
 
     public boolean updateContrato(Contrato entidade) throws SQLException {
         try (PreparedStatement statement = prepararSQL(UPDATE_CONTRATO_SQL)) {
-            statement.setInt(1, entidade.getId());
-            statement.setString(2, entidade.getDescricao());
-            statement.setTimestamp(3, entidade.getDataInicio());
-            statement.setTimestamp(4, entidade.getDataCriacao());
-            statement.setInt(5, entidade.getMedidorId());
-            statement.setInt(6, entidade.getClasseId());
-            statement.setInt(7, entidade.getClienteId());
+            statement.setString(1, entidade.getDescricao());
+            statement.setTimestamp(2, entidade.getDataInicio());
+            statement.setTimestamp(3, entidade.getDataCriacao());
+            statement.setInt(4, entidade.getMedidorId());
+            statement.setInt(5, entidade.getClasseId());
+            statement.setInt(6, entidade.getClienteId());
+            statement.setInt(7, entidade.getId());
 
             return statement.executeUpdate() > 0;
         } catch (ClassNotFoundException e) {

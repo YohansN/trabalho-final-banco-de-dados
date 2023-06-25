@@ -17,12 +17,12 @@ public class Teste {
     public static void main(String[] args) throws SQLException {
 
         //count
-        //System.out.println(tipoPessoaDAO.count());
+        System.out.println(tipoPessoaDAO.count());
         System.out.println(pessoaDAO.count());
 
         //salvar
         Pessoa pessoa = new Pessoa("Teste da Silva", "11122233344", 1);
-        //pessoaDAO.insertPessoa(pessoa);
+        pessoaDAO.insertPessoa(pessoa);
 
         //buscar por ID
         pessoa = pessoaDAO.selectPessoaById(8);
@@ -38,15 +38,14 @@ public class Teste {
         System.out.println(pessoa);
 
         //Select all
-        /*List<Pessoa> pessoas = pessoaDAO.selectAllPessoa();
-        pessoas.forEach(System.out::println);*/
+        List<Pessoa> pessoas = pessoaDAO.selectAllPessoa();
+        pessoas.forEach(System.out::println);
 
-        /*//Delete
+        //Delete
         pessoaDAO.deletePessoa(2);
         pessoaDAO.selectAllPessoa().forEach(System.out::println);
 
-        pessoa.ToString();
 
-        System.out.println(new Gson().toJson(pessoa));*/
+        System.out.println(new Gson().toJson(pessoa));
     }
 }

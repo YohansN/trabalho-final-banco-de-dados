@@ -14,7 +14,7 @@ public class MedicaoDAO extends ConexaoDB{
     private static final String SELECT_MEDICAO_BY_ID = "SELECT id, mes, ano, data_medicao, consumo, medidor_id, time_rota_id FROM medicao WHERE id = ?";
     private static final String SELECT_ALL_MEDICAO = "SELECT * FROM medicao;";
     private static final String DELETE_MEDICAO_SQL = "DELETE FROM medicao WHERE id = ?;";
-    private static final String UPDATE_MEDICAO_SQL = "UPDATE medicao SET id = ? mes = ?, ano = ?, data_medicao = ?, consumo = ?, medidor_id = ?, time_rota_id = ? WHERE id = ?;";
+    private static final String UPDATE_MEDICAO_SQL = "UPDATE medicao SET mes = ?, ano = ?, data_medicao = ?, consumo = ?, medidor_id = ?, time_rota_id = ? WHERE id = ?;";
     private static final String TOTAL = "SELECT count(1) FROM medicao;";
 
     public Integer count() {
@@ -107,13 +107,13 @@ public class MedicaoDAO extends ConexaoDB{
 
     public boolean updateMedicao(Medicao entidade) throws SQLException {
         try (PreparedStatement statement = prepararSQL(UPDATE_MEDICAO_SQL)) {
-            statement.setInt(1, entidade.getId());
-            statement.setString(2, entidade.getMes());
-            statement.setString(3, entidade.getAno());
-            statement.setTimestamp(4, entidade.getDataMedicao());
-            statement.setString(5, entidade.getConsumo());
-            statement.setInt(6, entidade.getMedidorId());
-            statement.setInt(7, entidade.getTimeRotaId());
+            statement.setString(1, entidade.getMes());
+            statement.setString(2, entidade.getAno());
+            statement.setTimestamp(3, entidade.getDataMedicao());
+            statement.setString(4, entidade.getConsumo());
+            statement.setInt(5, entidade.getMedidorId());
+            statement.setInt(6, entidade.getTimeRotaId());
+            statement.setInt(7, entidade.getId());
 
             return statement.executeUpdate() > 0;
         } catch (ClassNotFoundException e) {

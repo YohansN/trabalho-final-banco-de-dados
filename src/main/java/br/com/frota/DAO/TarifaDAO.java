@@ -14,7 +14,7 @@ public class TarifaDAO extends ConexaoDB{
     private static final String SELECT_TARIFA_BY_ID = "SELECT id, taxa, classe, lei, data_inicio, data_final FROM tarifa WHERE id = ?";
     private static final String SELECT_ALL_TARIFA = "SELECT * FROM tarifa;";
     private static final String DELETE_TARIFA_SQL = "DELETE FROM tarifa WHERE id = ?;";
-    private static final String UPDATE_TARIFA_SQL = "UPDATE tarifa SET id = ? taxa = ?, classe = ?, lei = ?, data_inicio = ?, data_final = ? WHERE id = ?;";
+    private static final String UPDATE_TARIFA_SQL = "UPDATE tarifa SET taxa = ?, classe = ?, lei = ?, data_inicio = ?, data_final = ? WHERE id = ?;";
     private static final String TOTAL = "SELECT count(1) FROM tarifa;";
 
     public Integer count() {
@@ -105,12 +105,12 @@ public class TarifaDAO extends ConexaoDB{
 
     public boolean updateTarifa(Tarifa entidade) throws SQLException {
         try (PreparedStatement statement = prepararSQL(UPDATE_TARIFA_SQL)) {
-            statement.setInt(1, entidade.getId());
-            statement.setString(2, entidade.getTaxa());
-            statement.setInt(3, entidade.getClasse());
-            statement.setString(4, entidade.getLei());
-            statement.setTimestamp(5, entidade.getDataInicio());
-            statement.setTimestamp(6, entidade.getDataFinal());
+            statement.setString(1, entidade.getTaxa());
+            statement.setInt(2, entidade.getClasse());
+            statement.setString(3, entidade.getLei());
+            statement.setTimestamp(4, entidade.getDataInicio());
+            statement.setTimestamp(5, entidade.getDataFinal());
+            statement.setInt(6, entidade.getId());
 
             return statement.executeUpdate() > 0;
         } catch (ClassNotFoundException e) {

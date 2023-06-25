@@ -13,7 +13,7 @@ public class CobrancaDAO extends ConexaoDB{
     private static final String SELECT_COBRANCA_BY_ID = "SELECT id, mes_referencia, ano_referencia, tarifa_id, medicao_id FROM cobranca WHERE id = ?";
     private static final String SELECT_ALL_COBRANCA = "SELECT * FROM cobranca;";
     private static final String DELETE_COBRANCA_SQL = "DELETE FROM cobranca WHERE id = ?;";
-    private static final String UPDATE_COBRANCA_SQL = "UPDATE cobranca SET id = ? mes_referencia = ?, ano_referencia = ?, tarifa_id = ?, medicao_id = ? WHERE id = ?;";
+    private static final String UPDATE_COBRANCA_SQL = "UPDATE cobranca SET mes_referencia = ?, ano_referencia = ?, tarifa_id = ?, medicao_id = ? WHERE id = ?;";
     private static final String TOTAL = "SELECT count(1) FROM cobranca;";
 
     public Integer count() {
@@ -100,11 +100,11 @@ public class CobrancaDAO extends ConexaoDB{
 
     public boolean updateCobranca(Cobranca entidade) throws SQLException {
         try (PreparedStatement statement = prepararSQL(UPDATE_COBRANCA_SQL)) {
-            statement.setInt(1, entidade.getId());
-            statement.setString(2, entidade.getMesReferencia());
-            statement.setString(3, entidade.getAnoReferencia());
-            statement.setInt(4, entidade.getTarifaId());
-            statement.setInt(5, entidade.getMedicaoId());
+            statement.setString(1, entidade.getMesReferencia());
+            statement.setString(2, entidade.getAnoReferencia());
+            statement.setInt(3, entidade.getTarifaId());
+            statement.setInt(4, entidade.getMedicaoId());
+            statement.setInt(5, entidade.getId());
 
             return statement.executeUpdate() > 0;
         } catch (ClassNotFoundException e) {

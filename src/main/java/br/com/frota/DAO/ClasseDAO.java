@@ -13,7 +13,7 @@ public class ClasseDAO extends ConexaoDB{
     private static final String SELECT_CLASSE_BY_ID = "SELECT id, descricao, id_tipo_fase FROM classe WHERE id = ?";
     private static final String SELECT_ALL_CLASSE = "SELECT * FROM classe;";
     private static final String DELETE_CLASSE_SQL = "DELETE FROM classe WHERE id = ?;";
-    private static final String UPDATE_CLASSE_SQL = "UPDATE classe SET id = ? descricao = ?, id_tipo_fase = ? WHERE id = ?;";
+    private static final String UPDATE_CLASSE_SQL = "UPDATE classe SET descricao = ?, id_tipo_fase = ? WHERE id = ?;";
     private static final String TOTAL = "SELECT count(1) FROM classe;";
 
     public Integer count() {
@@ -94,9 +94,9 @@ public class ClasseDAO extends ConexaoDB{
 
     public boolean updateClasse(Classe entidade) throws SQLException {
         try (PreparedStatement statement = prepararSQL(UPDATE_CLASSE_SQL)) {
-            statement.setInt(1, entidade.getId());
-            statement.setString(2, entidade.getDescricao());
-            statement.setInt(3, entidade.getTipoFaseId());
+            statement.setString(1, entidade.getDescricao());
+            statement.setInt(2, entidade.getTipoFaseId());
+            statement.setInt(3, entidade.getId());
 
             return statement.executeUpdate() > 0;
         } catch (ClassNotFoundException e) {

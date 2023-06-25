@@ -13,7 +13,7 @@ public class MedidorDAO extends ConexaoDB{
     private static final String SELECT_MEDIDOR_BY_ID = "SELECT id, descricao, rota_id, poste_id FROM medidor WHERE id = ?";
     private static final String SELECT_ALL_MEDIDOR = "SELECT * FROM medidor;";
     private static final String DELETE_MEDIDOR_SQL = "DELETE FROM medidor WHERE id = ?;";
-    private static final String UPDATE_MEDIDOR_SQL = "UPDATE medidor SET id = ? descricao = ?, rota_id = ?, poste_id = ? WHERE id = ?;";
+    private static final String UPDATE_MEDIDOR_SQL = "UPDATE medidor SET descricao = ?, rota_id = ?, poste_id = ? WHERE id = ?;";
     private static final String TOTAL = "SELECT count(1) FROM medidor;";
 
     public Integer count() {
@@ -97,10 +97,10 @@ public class MedidorDAO extends ConexaoDB{
 
     public boolean updateMedidor(Medidor entidade) throws SQLException {
         try (PreparedStatement statement = prepararSQL(UPDATE_MEDIDOR_SQL)) {
-            statement.setInt(1, entidade.getId());
-            statement.setString(2, entidade.getDescricao());
-            statement.setInt(3, entidade.getRotaId());
-            statement.setInt(4, entidade.getPosteId());
+            statement.setString(1, entidade.getDescricao());
+            statement.setInt(2, entidade.getRotaId());
+            statement.setInt(3, entidade.getPosteId());
+            statement.setInt(4, entidade.getId());
 
             return statement.executeUpdate() > 0;
         } catch (ClassNotFoundException e) {

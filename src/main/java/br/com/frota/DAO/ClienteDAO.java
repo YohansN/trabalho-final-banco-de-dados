@@ -13,7 +13,7 @@ public class ClienteDAO extends ConexaoDB{
     private static final String SELECT_CLIENTE_BY_ID = "SELECT id, num_documento, num_cliente, pessoa_id FROM cliente WHERE id = ?";
     private static final String SELECT_ALL_CLIENTE = "SELECT * FROM cliente;";
     private static final String DELETE_CLIENTE_SQL = "DELETE FROM cliente WHERE id = ?;";
-    private static final String UPDATE_CLIENTE_SQL = "UPDATE cliente SET id = ?, num_documento = ?, num_cliente = ?, pessoa_id = ? WHERE id = ?;";
+    private static final String UPDATE_CLIENTE_SQL = "UPDATE cliente SET num_documento = ?, num_cliente = ?, pessoa_id = ? WHERE id = ?;";
     private static final String TOTAL = "SELECT count(1) FROM cliente;";
 
     public Integer count() {
@@ -97,10 +97,10 @@ public class ClienteDAO extends ConexaoDB{
 
     public boolean updateCliente(Cliente entidade) throws SQLException {
         try (PreparedStatement statement = prepararSQL(UPDATE_CLIENTE_SQL)) {
-            statement.setInt(1, entidade.getId());
-            statement.setString(2, entidade.getNumDocumento());
-            statement.setString(3, entidade.getNumCliente());
-            statement.setInt(4, entidade.getPessoaId());
+            statement.setString(1, entidade.getNumDocumento());
+            statement.setString(2, entidade.getNumCliente());
+            statement.setInt(3, entidade.getPessoaId());
+            statement.setInt(4, entidade.getId());
 
             return statement.executeUpdate() > 0;
         } catch (ClassNotFoundException e) {
