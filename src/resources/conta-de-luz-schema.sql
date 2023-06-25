@@ -109,3 +109,4 @@ CREATE TABLE contrato (
     medidor_id int references medidor(id),
     classe_id int references classe(id),
     cliente_id int references cliente(id)
+    );
