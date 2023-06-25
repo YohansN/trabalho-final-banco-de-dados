@@ -1,26 +1,10 @@
-# Trabalho Final - Conta de Luz
+# Trabalho Final | Banco de Dados: Conta de Luz
 ## Cadeira de Banco de Dados | IFCE Maracanaú - 2023.1
+O projeto é composto por um CRUD básico das entidades que compoem o banco de dados criado a partir de uma fatura de conta de energia Enel.
+![Diagrama das tabelas do banco de dados do projeto.](src/resources/conta_de_luz.png)
+Fatura Enel usada de base:
+![Nota Enel usada de base](https://www.enel.com.br/content/dam/enel-br/megamenu/para-você/entenda-sua-conta/2023/1101_Modelo-de-Fatura-OSB-PIX-RJ_ENEL.png)
+
 
 documentação do PSQL - POSTGRESQL
 https://www.postgresql.org/docs/7/app-psql.html
-
-Conectar em um banco de dados específico 
--h endereco do host
--p porta do host
--U nome do usuário
--d nome do banco alvo
-$ psql -h 200.17.32.221 -p 5432 -U postgres -d professor_frota
-
-Executar arquivos em um banco de dados. para executar o comando abaixo
-precisa estar na pasta do arquivo
--h endereco do host
--p porta do host
--d nome do banco alvo
--U nome do usuário
--a imprimir o que está sendo executado
--f arquivo que será executado
-$ psql -h 200.17.32.221 -p 5432 -d professor_frota -U postgres -a -f inserts.sql
-
-
-O Projeto tem um crud básico da entidade marca, e para testar o main está no path:
-src/br/com/frota/util/Teste.java
