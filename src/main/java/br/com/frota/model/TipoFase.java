@@ -7,6 +7,11 @@ public class TipoFase extends GenericModel {
         super.setId(id);
         this.descricao = descricao;
     }
+
+    public TipoFase(String descricao) {
+        this.descricao = descricao;
+    }
+
     public String getDescricao() {
         return descricao;
     }

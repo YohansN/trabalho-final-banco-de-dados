@@ -25,6 +25,19 @@ public class Pessoa extends GenericModel {
         this.tipoPessoaId = tipoPessoaId;
     }
 
+    public Pessoa(String nome, String cpf, String cnpj, Integer tipoPessoaId) {
+        this.nome = nome;
+        this.cpf = cpf;
+        this.cnpj = cnpj;
+        this.tipoPessoaId = tipoPessoaId;
+    }
+
+    public Pessoa(String nome, String cpf, Integer tipoPessoaId) {
+        this.nome = nome;
+        this.cpf = cpf;
+        this.tipoPessoaId = tipoPessoaId;
+    }
+
     public String getNome() {
         return nome;
     }

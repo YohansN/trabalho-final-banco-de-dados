@@ -21,6 +21,14 @@ public class TarefaRota extends GenericModel{
         this.rotaId = rotaId;
     }
 
+    public TarefaRota(String observacao, Timestamp dataInicio, Timestamp dataFim, String tarefaRotacao, Integer rotaId) {
+        this.observacao = observacao;
+        this.dataInicio = dataInicio;
+        this.dataFim = dataFim;
+        this.tarefaRotacao = tarefaRotacao;
+        this.rotaId = rotaId;
+    }
+
     public String getObservacao() {
         return observacao;
     }

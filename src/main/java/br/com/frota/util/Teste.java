@@ -23,15 +23,14 @@ public class Teste {
         System.out.println(pessoaDAO.count());
 
         //salvar
-        Pessoa pessoa = new Pessoa("");
+        Pessoa pessoa = new Pessoa("Teste da Silva", "11122233344", 1);
         pessoaDAO.insertPessoa(pessoa);
 
         //buscar por ID
-        pessoa = pessoaDAO.selectPessoaById(2);
+        pessoa = pessoaDAO.selectPessoaById(4);
         System.out.println(pessoa);
 
         //Update
-        pessoa.setId();
         pessoa.setNome("");
         pessoa.setCpf("");
         pessoa.setCnpj("");

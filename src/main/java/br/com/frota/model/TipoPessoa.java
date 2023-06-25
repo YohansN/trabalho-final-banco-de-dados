@@ -8,6 +8,10 @@ public class TipoPessoa extends GenericModel {
         this.descricao = descricao;
     }
 
+    public TipoPessoa(String descricao) {
+        this.descricao = descricao;
+    }
+
     public String getDescricao() {
         return descricao;
     }

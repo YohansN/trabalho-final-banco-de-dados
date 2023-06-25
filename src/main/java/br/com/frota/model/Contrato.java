@@ -27,6 +27,15 @@ public class Contrato extends GenericModel{
         this.clienteId = clienteId;
     }
 
+    public Contrato(String descricao, Timestamp dataInicio, Timestamp dataCriacao, Integer medidorId, Integer classeId, Integer clienteId) {
+        this.descricao = descricao;
+        this.dataInicio = dataInicio;
+        this.dataCriacao = dataCriacao;
+        this.medidorId = medidorId;
+        this.classeId = classeId;
+        this.clienteId = clienteId;
+    }
+
     public String getDescricao() {
         return descricao;
     }

@@ -15,6 +15,12 @@ public class Cliente extends GenericModel{
         this.pessoaId = pessoaId;
     }
 
+    public Cliente(String numDocumento, String numCliente, Integer pessoaId) {
+        this.numDocumento = numDocumento;
+        this.numCliente = numCliente;
+        this.pessoaId = pessoaId;
+    }
+
     public String getNumDocumento() {
         return numDocumento;
     }

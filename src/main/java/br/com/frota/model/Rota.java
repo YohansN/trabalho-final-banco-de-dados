@@ -8,6 +8,10 @@ public class Rota extends GenericModel{
         this.descricao = descricao;
     }
 
+    public Rota(String descricao) {
+        this.descricao = descricao;
+    }
+
     public String getDescricao() {
         return descricao;
     }

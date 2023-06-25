@@ -10,6 +10,11 @@ public class Funcionario extends GenericModel{
         this.pessoaId = pessoaId;
     }
 
+    public Funcionario(String codigoFuncional, Integer pessoaId) {
+        this.codigoFuncional = codigoFuncional;
+        this.pessoaId = pessoaId;
+    }
+
     public String getCodigoFuncional() {
         return codigoFuncional;
     }

@@ -15,6 +15,11 @@ public class TimeRota extends GenericModel{
         this.tarefaRotaId = tarefaRotaId;
     }
 
+    public TimeRota(Integer funcionarioId, Integer tarefaRotaId) {
+        this.funcionarioId = funcionarioId;
+        this.tarefaRotaId = tarefaRotaId;
+    }
+
     public Integer getFuncionarioId() {
         return funcionarioId;
     }

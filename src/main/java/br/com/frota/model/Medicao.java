@@ -25,6 +25,15 @@ public class Medicao extends GenericModel{
         this.timeRotaId = timeRotaId;
     }
 
+    public Medicao(String mes, String ano, Timestamp dataMedicao, String consumo, Integer medidorId, Integer timeRotaId) {
+        this.mes = mes;
+        this.ano = ano;
+        this.dataMedicao = dataMedicao;
+        this.consumo = consumo;
+        this.medidorId = medidorId;
+        this.timeRotaId = timeRotaId;
+    }
+
     public String getMes() {
         return mes;
     }

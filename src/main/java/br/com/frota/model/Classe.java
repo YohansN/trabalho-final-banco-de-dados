@@ -11,6 +11,10 @@ public class Classe extends GenericModel {
         this.tipoFaseId = tipoFaseId;
     }
 
+    public Classe(String descricao, Integer tipoFaseId) {
+        this.descricao = descricao;
+        this.tipoFaseId = tipoFaseId;
+    }
 
     public String getDescricao() {
         return descricao;

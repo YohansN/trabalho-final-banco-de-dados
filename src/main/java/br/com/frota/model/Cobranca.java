@@ -19,6 +19,13 @@ public class Cobranca extends GenericModel{
         this.medicaoId = medicaoId;
     }
 
+    public Cobranca(String mesReferencia, String anoReferencia, Integer tarifaId, Integer medicaoId) {
+        this.mesReferencia = mesReferencia;
+        this.anoReferencia = anoReferencia;
+        this.tarifaId = tarifaId;
+        this.medicaoId = medicaoId;
+    }
+
     public String getMesReferencia() {
         return mesReferencia;
     }

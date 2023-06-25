@@ -13,6 +13,13 @@ public class Poste extends GenericModel{
         this.observacao = observacao;
     }
 
+    public Poste(String latitude, String longitude, String codigo, String observacao) {
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.codigo = codigo;
+        this.observacao = observacao;
+    }
+
     public String getLatitude() {
         return latitude;
     }

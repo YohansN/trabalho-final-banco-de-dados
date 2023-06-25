@@ -17,6 +17,12 @@ public class Medidor extends GenericModel{
         this.posteId = posteId;
     }
 
+    public Medidor(String descricao, Integer rotaId, Integer posteId) {
+        this.descricao = descricao;
+        this.rotaId = rotaId;
+        this.posteId = posteId;
+    }
+
     public String getDescricao() {
         return descricao;
     }

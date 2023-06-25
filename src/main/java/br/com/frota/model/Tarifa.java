@@ -21,6 +21,14 @@ public class Tarifa extends GenericModel{
         this.dataFinal = dataFinal;
     }
 
+    public Tarifa(String taxa, Integer classeId, String lei, Timestamp dataInicio, Timestamp dataFinal) {
+        this.taxa = taxa;
+        this.classeId = classeId;
+        this.lei = lei;
+        this.dataInicio = dataInicio;
+        this.dataFinal = dataFinal;
+    }
+
     public String getTaxa() {
         return taxa;
     }
