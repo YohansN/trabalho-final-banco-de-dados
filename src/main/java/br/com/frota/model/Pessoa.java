@@ -75,7 +75,7 @@ public class Pessoa extends GenericModel {
     public String toString() {
         return "Pessoa{" +
                 "id='" + this.getId() + '\'' +
-                "nome='" + nome + '\'' +
+                ", nome='" + nome + '\'' +
                 ", cpf='" + cpf + '\'' +
                 ", cnpj='" + cnpj + '\'' +
                 ", tipoPessoaId=" + tipoPessoaId +

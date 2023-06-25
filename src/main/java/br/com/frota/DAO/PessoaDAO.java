@@ -13,7 +13,7 @@ public class PessoaDAO extends ConexaoDB{
     private static final String SELECT_PESSOA_BY_ID = "SELECT id, nome, cpf, cnpj, tipo_pessoa_id FROM pessoa WHERE id = ?";
     private static final String SELECT_ALL_PESSOA = "SELECT * FROM pessoa;";
     private static final String DELETE_PESSOA_SQL = "DELETE FROM pessoa WHERE id = ?;";
-    private static final String UPDATE_PESSOA_SQL = "UPDATE pessoa SET nome = ?, cpf = ?, cnpj = ?, topo_pessoa_id = ? WHERE id = ?;";
+    private static final String UPDATE_PESSOA_SQL = "UPDATE pessoa SET nome = ?, cpf = ?, cnpj = ?, tipo_pessoa_id = ? WHERE id = ?;";
     private static final String TOTAL = "SELECT count(1) FROM pessoa;";
 
     public Integer count() {
@@ -108,11 +108,11 @@ public class PessoaDAO extends ConexaoDB{
 
     public boolean updatePessoa(Pessoa entidade) throws SQLException {
         try (PreparedStatement statement = prepararSQL(UPDATE_PESSOA_SQL)) {
-            statement.setInt(1, entidade.getId());
-            statement.setString(2, entidade.getNome());
-            statement.setString(3, entidade.getCpf());
-            statement.setString(4, entidade.getCnpj());
-            statement.setInt(5, entidade.getTipoPessoaId());
+            statement.setString(1, entidade.getNome());
+            statement.setString(2, entidade.getCpf());
+            statement.setString(3, entidade.getCnpj());
+            statement.setInt(4, entidade.getTipoPessoaId());
+            statement.setInt(5, entidade.getId());
 
             return statement.executeUpdate() > 0;
         } catch (ClassNotFoundException e) {

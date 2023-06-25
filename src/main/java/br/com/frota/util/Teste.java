@@ -17,25 +17,25 @@ public class Teste {
     public static void main(String[] args) throws SQLException {
 
         //count
-        System.out.println(tipoPessoaDAO.count());
+        //System.out.println(tipoPessoaDAO.count());
         System.out.println(pessoaDAO.count());
 
         //salvar
         Pessoa pessoa = new Pessoa("Teste da Silva", "11122233344", 1);
-        pessoaDAO.insertPessoa(pessoa);
+        //pessoaDAO.insertPessoa(pessoa);
 
-        /*//buscar por ID
-        pessoa = pessoaDAO.selectPessoaById(5);
-        System.out.println(pessoa);*/
+        //buscar por ID
+        pessoa = pessoaDAO.selectPessoaById(8);
+        System.out.println(pessoa);
 
-        /*//Update
-        pessoa.setNome("Teste do teste da silva");
-        pessoa.setCpf("12312312312");
+        //Update
+        pessoa.setNome("Daniel Ribeiro da Silva");
+        pessoa.setCpf("01212002112");
         pessoa.setCnpj("");
-        pessoa.setTipoPessoaId(1);
+        pessoa.setTipoPessoaId(2);
         pessoaDAO.updatePessoa(pessoa);
-        pessoa = pessoaDAO.selectPessoaById(6);
-        System.out.println(pessoa);*/
+        pessoa = pessoaDAO.selectPessoaById(8);
+        System.out.println(pessoa);
 
         //Select all
         /*List<Pessoa> pessoas = pessoaDAO.selectAllPessoa();
