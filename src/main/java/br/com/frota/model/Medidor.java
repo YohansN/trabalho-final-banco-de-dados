@@ -29,6 +29,18 @@ public class Medidor extends GenericModel{
         return posteId;
     }
 
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public void setRotaId(Integer rotaId) {
+        this.rotaId = rotaId;
+    }
+
+    public void setPosteId(Integer posteId) {
+        this.posteId = posteId;
+    }
+
     @Override
     public String toString() {
         return "Medidor{" +

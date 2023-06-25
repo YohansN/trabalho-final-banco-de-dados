@@ -35,6 +35,22 @@ public class Cobranca extends GenericModel{
         return medicaoId;
     }
 
+    public void setMesReferencia(String mesReferencia) {
+        this.mesReferencia = mesReferencia;
+    }
+
+    public void setAnoReferencia(String anoReferencia) {
+        this.anoReferencia = anoReferencia;
+    }
+
+    public void setTarifaId(Integer tarifaId) {
+        this.tarifaId = tarifaId;
+    }
+
+    public void setMedicaoId(Integer medicaoId) {
+        this.medicaoId = medicaoId;
+    }
+
     @Override
     public String toString() {
         return "Cobranca{" +

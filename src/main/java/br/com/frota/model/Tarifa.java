@@ -41,6 +41,26 @@ public class Tarifa extends GenericModel{
         return dataFinal;
     }
 
+    public void setTaxa(String taxa) {
+        this.taxa = taxa;
+    }
+
+    public void setClasseId(Integer classeId) {
+        this.classeId = classeId;
+    }
+
+    public void setLei(String lei) {
+        this.lei = lei;
+    }
+
+    public void setDataInicio(Timestamp dataInicio) {
+        this.dataInicio = dataInicio;
+    }
+
+    public void setDataFinal(Timestamp dataFinal) {
+        this.dataFinal = dataFinal;
+    }
+
     @Override
     public java.lang.String toString() {
         return "Tarifa{" +

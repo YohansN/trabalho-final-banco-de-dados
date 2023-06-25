@@ -18,6 +18,14 @@ public class Funcionario extends GenericModel{
         return pessoaId;
     }
 
+    public void setCodigoFuncional(String codigoFuncional) {
+        this.codigoFuncional = codigoFuncional;
+    }
+
+    public void setPessoaId(Integer pessoaId) {
+        this.pessoaId = pessoaId;
+    }
+
     @Override
     public String toString() {
         return "Funcionario{" +

@@ -23,6 +23,14 @@ public class TimeRota extends GenericModel{
         return tarefaRotaId;
     }
 
+    public void setFuncionarioId(Integer funcionarioId) {
+        this.funcionarioId = funcionarioId;
+    }
+
+    public void setTarefaRotaId(Integer tarefaRotaId) {
+        this.tarefaRotaId = tarefaRotaId;
+    }
+
     @Override
     public String toString() {
         return "TimeRota{" +

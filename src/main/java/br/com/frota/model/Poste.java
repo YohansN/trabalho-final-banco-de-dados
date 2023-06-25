@@ -29,6 +29,22 @@ public class Poste extends GenericModel{
         return observacao;
     }
 
+    public void setLatitude(String latitude) {
+        this.latitude = latitude;
+    }
+
+    public void setLongitude(String longitude) {
+        this.longitude = longitude;
+    }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
+
+    public void setObservacao(String observacao) {
+        this.observacao = observacao;
+    }
+
     @Override
     public String toString() {
         return "Poste{" +

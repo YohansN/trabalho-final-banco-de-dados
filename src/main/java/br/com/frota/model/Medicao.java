@@ -49,6 +49,30 @@ public class Medicao extends GenericModel{
         return timeRotaId;
     }
 
+    public void setMes(String mes) {
+        this.mes = mes;
+    }
+
+    public void setAno(String ano) {
+        this.ano = ano;
+    }
+
+    public void setDataMedicao(Timestamp dataMedicao) {
+        this.dataMedicao = dataMedicao;
+    }
+
+    public void setConsumo(String consumo) {
+        this.consumo = consumo;
+    }
+
+    public void setMedidorId(Integer medidorId) {
+        this.medidorId = medidorId;
+    }
+
+    public void setTimeRotaId(Integer timeRotaId) {
+        this.timeRotaId = timeRotaId;
+    }
+
     @Override
     public String toString() {
         return "Medicao{" +

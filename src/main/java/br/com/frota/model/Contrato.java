@@ -51,6 +51,30 @@ public class Contrato extends GenericModel{
         return clienteId;
     }
 
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public void setDataInicio(Timestamp dataInicio) {
+        this.dataInicio = dataInicio;
+    }
+
+    public void setDataCriacao(Timestamp dataCriacao) {
+        this.dataCriacao = dataCriacao;
+    }
+
+    public void setMedidorId(Integer medidorId) {
+        this.medidorId = medidorId;
+    }
+
+    public void setClasseId(Integer classeId) {
+        this.classeId = classeId;
+    }
+
+    public void setClienteId(Integer clienteId) {
+        this.clienteId = clienteId;
+    }
+
     @Override
     public String toString() {
         return "Contrato{" +

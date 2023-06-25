@@ -42,6 +42,22 @@ public class Pessoa extends GenericModel {
         return tipoPessoaId;
     }
 
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public void setCnpj(String cnpj) {
+        this.cnpj = cnpj;
+    }
+
+    public void setTipoPessoaId(Integer tipoPessoaId) {
+        this.tipoPessoaId = tipoPessoaId;
+    }
+
     @Override
     public String toString() {
         return "Pessoa{" +

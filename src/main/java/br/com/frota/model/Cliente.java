@@ -26,6 +26,17 @@ public class Cliente extends GenericModel{
     public Integer getPessoaId() {
         return pessoaId;
     }
+    public void setNumDocumento(String numDocumento) {
+        this.numDocumento = numDocumento;
+    }
+
+    public void setNumCliente(String numCliente) {
+        this.numCliente = numCliente;
+    }
+
+    public void setPessoaId(Integer pessoaId) {
+        this.pessoaId = pessoaId;
+    }
 
     @Override
     public String toString() {

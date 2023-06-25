@@ -41,6 +41,26 @@ public class TarefaRota extends GenericModel{
         return rotaId;
     }
 
+    public void setObservacao(String observacao) {
+        this.observacao = observacao;
+    }
+
+    public void setDataInicio(Timestamp dataInicio) {
+        this.dataInicio = dataInicio;
+    }
+
+    public void setDataFim(Timestamp dataFim) {
+        this.dataFim = dataFim;
+    }
+
+    public void setTarefaRotacao(String tarefaRotacao) {
+        this.tarefaRotacao = tarefaRotacao;
+    }
+
+    public void setRotaId(Integer rotaId) {
+        this.rotaId = rotaId;
+    }
+
     @Override
     public String toString() {
         return "TarefaRota{" +

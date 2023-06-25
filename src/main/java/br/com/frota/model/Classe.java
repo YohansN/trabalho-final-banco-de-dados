@@ -18,6 +18,15 @@ public class Classe extends GenericModel {
     public Integer getTipoFaseId() {
         return tipoFaseId;
     }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public void setTipoFaseId(Integer tipoFaseId) {
+        this.tipoFaseId = tipoFaseId;
+    }
+
     @Override
     public java.lang.String toString() {
         return "Classe{" +

@@ -1,7 +1,11 @@
 package br.com.frota.util;
 
 import br.com.frota.DAO.MarcaDAO;
+import br.com.frota.DAO.PessoaDAO;
+import br.com.frota.DAO.TipoPessoaDAO;
 import br.com.frota.model.Marca;
+import br.com.frota.model.Pessoa;
+import br.com.frota.model.TipoPessoa;
 import com.google.gson.Gson;
 
 import java.sql.SQLException;
@@ -9,34 +13,41 @@ import java.util.List;
 
 public class Teste {
     static MarcaDAO marcaDAO = new MarcaDAO();
+    static TipoPessoaDAO tipoPessoaDAO = new TipoPessoaDAO();
+    static PessoaDAO pessoaDAO = new PessoaDAO();
 
     public static void main(String[] args) throws SQLException {
 
         //count
-        System.out.println(marcaDAO.count());
+        /*System.out.println(tipoPessoaDAO.count());
+        System.out.println(pessoaDAO.count());
 
         //salvar
-        Marca marca = new Marca("Citroen");
-        marcaDAO.insertMarca(marca);
+        Pessoa pessoa = new Pessoa("");
+        pessoaDAO.insertPessoa(pessoa);
 
         //buscar por ID
-        marca = marcaDAO.selectMarca(2);
-        System.out.println(marca);
+        pessoa = pessoaDAO.selectPessoaById(2);
+        System.out.println(pessoa);
 
         //Update
-        marca.setDescricao("Volt");
-        marcaDAO.updateMarca(marca);
-        marca = marcaDAO.selectMarca(2);
-        System.out.println(marca);
+        pessoa.setId();
+        pessoa.setNome("");
+        pessoa.setCpf("");
+        pessoa.setCnpj("");
+        pessoa.setTipoPessoaId();
+        pessoaDAO.updatePessoa(pessoa);
+        pessoa = pessoaDAO.selectPessoaById(2);
+        System.out.println(pessoa);
 
         //Select all
-        List<Marca> marcas = marcaDAO.selectAllMarcas();
-        marcas.forEach(System.out::println);
+        List<Pessoa> pessoas = pessoaDAO.selectAllPessoa();
+        pessoas.forEach(System.out::println);
 
         //Delete
-        marcaDAO.deleteMarca(2);
-        marcaDAO.selectAllMarcas().forEach(System.out::println);
+        pessoaDAO.deletePessoa(2);
+        pessoaDAO.selectAllPessoa().forEach(System.out::println);
 
-        System.out.println(new Gson().toJson(marca));
+        System.out.println(new Gson().toJson(pessoa));*/
     }
 }
