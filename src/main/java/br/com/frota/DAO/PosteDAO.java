@@ -9,11 +9,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PosteDAO extends ConexaoDB{
-    private static final String INSERT_POSTE_SQL = "INSERT INTO poste (latitude, longitude, codigo, obervacao) VALUES (?, ?, ?, ?);";
-    private static final String SELECT_POSTE_BY_ID = "SELECT id, latitude, longitude, codigo, obervacao FROM poste WHERE id = ?";
+    private static final String INSERT_POSTE_SQL = "INSERT INTO poste (latitude, longitude, codigo, observacao) VALUES (?, ?, ?, ?);";
+    private static final String SELECT_POSTE_BY_ID = "SELECT id, latitude, longitude, codigo, observacao FROM poste WHERE id = ?";
     private static final String SELECT_ALL_POSTE = "SELECT * FROM poste;";
     private static final String DELETE_POSTE_SQL = "DELETE FROM poste WHERE id = ?;";
-    private static final String UPDATE_POSTE_SQL = "UPDATE poste SET latitude = ?, longitude = ?, codigo = ?, obervacao = ? WHERE id = ?;";
+    private static final String UPDATE_POSTE_SQL = "UPDATE poste SET latitude = ?, longitude = ?, codigo = ?, observacao = ? WHERE id = ?;";
     private static final String TOTAL = "SELECT count(1) FROM poste;";
 
     public Integer count() {
@@ -57,7 +57,7 @@ public class PosteDAO extends ConexaoDB{
                 String latitude = rs.getString("latitude");
                 String longitude = rs.getString("longitude");
                 String codigo = rs.getString("codigo");
-                String obervacao = rs.getString("obervacao");
+                String obervacao = rs.getString("observacao");
                 entidade = new Poste(id, latitude, longitude, codigo, obervacao);
             }
         } catch (SQLException e) {
@@ -78,7 +78,7 @@ public class PosteDAO extends ConexaoDB{
                 String latitude = rs.getString("latitude");
                 String longitude = rs.getString("longitude");
                 String codigo = rs.getString("codigo");
-                String obervacao = rs.getString("obervacao");
+                String obervacao = rs.getString("observacao");
                 entidades.add(new Poste(id, latitude, longitude, codigo, obervacao));
             }
         } catch (SQLException e) {

@@ -6,7 +6,7 @@ CREATE TABLE tipo_fase(
 CREATE TABLE classe(
     id SERIAL PRIMARY KEY,
     descricao VARCHAR(45),
-    id_tipo_fase INT REFERENCES tipo_fase(id)
+    tipo_fase_id INT REFERENCES tipo_fase(id)
 );
 
 
@@ -57,7 +57,7 @@ CREATE TABLE poste(
   latitude VARCHAR(45),
   longitude VARCHAR(45),
   codigo VARCHAR(45),
-  obervacao VARCHAR(45)
+  observacao VARCHAR(45)
 );
 
 CREATE  TABLE  medidor(
@@ -109,4 +109,4 @@ CREATE TABLE contrato (
     medidor_id int references medidor(id),
     classe_id int references classe(id),
     cliente_id int references cliente(id)
-    );
+);

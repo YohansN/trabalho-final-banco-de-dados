@@ -9,11 +9,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ClasseDAO extends ConexaoDB{
-    private static final String INSERT_CLASSE_SQL = "INSERT INTO classe (descricao, id_tipo_fase) VALUES (?, ?);";
-    private static final String SELECT_CLASSE_BY_ID = "SELECT id, descricao, id_tipo_fase FROM classe WHERE id = ?";
+    private static final String INSERT_CLASSE_SQL = "INSERT INTO classe (descricao, tipo_fase_id) VALUES (?, ?);";
+    private static final String SELECT_CLASSE_BY_ID = "SELECT id, descricao, tipo_fase_id FROM classe WHERE id = ?";
     private static final String SELECT_ALL_CLASSE = "SELECT * FROM classe;";
     private static final String DELETE_CLASSE_SQL = "DELETE FROM classe WHERE id = ?;";
-    private static final String UPDATE_CLASSE_SQL = "UPDATE classe SET descricao = ?, id_tipo_fase = ? WHERE id = ?;";
+    private static final String UPDATE_CLASSE_SQL = "UPDATE classe SET descricao = ?, tipo_fase_id = ? WHERE id = ?;";
     private static final String TOTAL = "SELECT count(1) FROM classe;";
 
     public Integer count() {
@@ -53,7 +53,7 @@ public class ClasseDAO extends ConexaoDB{
 
             while (rs.next()) {
                 String descricao = rs.getString("descricao");
-                Integer idTipoFase = rs.getInt("id_tipo_fase");
+                Integer idTipoFase = rs.getInt("tipo_fase_id");
                 entidade = new Classe(id, descricao, idTipoFase);
             }
         } catch (SQLException e) {
@@ -72,7 +72,7 @@ public class ClasseDAO extends ConexaoDB{
             while (rs.next()) {
                 int id = rs.getInt("id");
                 String descricao = rs.getString("descricao");
-                Integer idTipoFase = rs.getInt("id_tipo_fase");
+                Integer idTipoFase = rs.getInt("tipo_fase_id");
                 entidades.add(new Classe(id, descricao, idTipoFase));
             }
         } catch (SQLException e) {
