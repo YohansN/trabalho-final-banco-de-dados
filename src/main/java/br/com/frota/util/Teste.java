@@ -1,8 +1,10 @@
 package br.com.frota.util;
 
+import br.com.frota.DAO.BoletoEnergiaDAO;
 import br.com.frota.DAO.MarcaDAO;
 import br.com.frota.DAO.PessoaDAO;
 import br.com.frota.DAO.TipoPessoaDAO;
+import br.com.frota.model.BoletoEnergia;
 import br.com.frota.model.Pessoa;
 import com.google.gson.Gson;
 
@@ -13,10 +15,11 @@ public class Teste {
     static MarcaDAO marcaDAO = new MarcaDAO();
     static TipoPessoaDAO tipoPessoaDAO = new TipoPessoaDAO();
     static PessoaDAO pessoaDAO = new PessoaDAO();
+    static BoletoEnergiaDAO boletoEnergiaDAO = new BoletoEnergiaDAO();
 
     public static void main(String[] args) throws SQLException {
 
-        //count
+        /*//count
         System.out.println(tipoPessoaDAO.count());
         System.out.println(pessoaDAO.count());
 
@@ -43,9 +46,12 @@ public class Teste {
 
         //Delete
         pessoaDAO.deletePessoa(2);
-        pessoaDAO.selectAllPessoa().forEach(System.out::println);
+        pessoaDAO.selectAllPessoa().forEach(System.out::println);*/
+
+        BoletoEnergia boleto = boletoEnergiaDAO.selectClienteDataById(1);
+        System.out.println(boleto);
 
 
-        System.out.println(new Gson().toJson(pessoa));
+        System.out.println(new Gson().toJson(boleto));
     }
 }

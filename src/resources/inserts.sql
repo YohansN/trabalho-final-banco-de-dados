@@ -53,3 +53,4 @@ SELECT * FROM rota;
 SELECT * FROM poste;
 SELECT * FROM medidor;
 SELECT * FROM contrato;
+SELECT * FROM boleto_energia;

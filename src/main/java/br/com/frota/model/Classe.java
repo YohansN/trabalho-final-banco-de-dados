@@ -35,7 +35,7 @@ public class Classe extends GenericModel {
     public java.lang.String toString() {
         return "Classe{" +
                 "id='" + this.getId() + '\'' +
-                "descricao='" + descricao + '\'' +
+                ", descricao='" + descricao + '\'' +
                 ", idTipoFase=" + tipoFaseDao.selectTipoFaseById(tipoFaseId) +
                 '}';
     }

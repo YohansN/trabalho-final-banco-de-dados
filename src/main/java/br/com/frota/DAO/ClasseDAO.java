@@ -10,7 +10,7 @@ import java.util.List;
 
 public class ClasseDAO extends ConexaoDB{
     private static final String INSERT_CLASSE_SQL = "INSERT INTO classe (descricao, tipo_fase_id) VALUES (?, ?);";
-    private static final String SELECT_CLASSE_BY_ID = "SELECT id, descricao, tipo_fase_id FROM classe WHERE id = ?";
+    private static final String SELECT_CLASSE_BY_ID = "SELECT id, descricao, tipo_fase_id FROM classe WHERE id = ?;";
     private static final String SELECT_ALL_CLASSE = "SELECT * FROM classe;";
     private static final String DELETE_CLASSE_SQL = "DELETE FROM classe WHERE id = ?;";
     private static final String UPDATE_CLASSE_SQL = "UPDATE classe SET descricao = ?, tipo_fase_id = ? WHERE id = ?;";

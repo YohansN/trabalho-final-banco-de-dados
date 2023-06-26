@@ -110,3 +110,15 @@ CREATE TABLE contrato (
     classe_id int references classe(id),
     cliente_id int references cliente(id)
 );
+
+CREATE TABLE boleto_energia (
+    id SERIAL PRIMARY KEY,
+    nome VARCHAR(45),
+    cpf VARCHAR(45),
+    cnpj VARCHAR(45),
+    tipo_pessoa_id int REFERENCES tipo_pessoa(id),
+    num_cliente VARCHAR(45),
+    num_documento VARCHAR(45),
+    descricao_rota VARCHAR(45),
+    descricao_medidor VARCHAR(45)
+);
